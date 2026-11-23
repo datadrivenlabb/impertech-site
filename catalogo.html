@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo de serviços — ImperTech</title>
+<meta name="description" content="Catálogo de serviços da ImperTech: impermeabilização de lajes, coberturas, terraços, piscinas, baldrames, reservatórios, jardineiras, áreas frias e subsolos no Litoral Norte de SC.">
+<meta property="og:title" content="Catálogo de serviços — ImperTech">
+<meta property="og:description" content="Do subsolo à cobertura: o sistema certo para cada área, com fotos e vídeos das nossas obras.">
+<meta property="og:image" content="img/cobertura.webp">
+<meta name="theme-color" content="#cfe8f6">
+<link rel="icon" href="img/logo-drop.png">
+<link rel="preload" href="fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Figtree";src:url(fonts/figtree-latin-wght-normal.woff2) format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Figtree";src:url(fonts/figtree-latin-ext-wght-normal.woff2) format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  color-scheme:light;
+  --ink:#0c2338; --ink-2:#3b5267; --ink-3:#4b6175;
+  --azul:#0b6ad0; --azul-esc:#0857ad; --azul-claro:#3aa0f0;
+  --agua-1:#bfe1f4; --agua-2:#d8edf8; --agua-3:#eef6fb;
+  --fundo:#063a68; --fundo-2:#0a5592;
+  --sombra:0 14px 32px -20px rgba(12,35,56,.42);
+  --r:26px;
+  --topo:112px;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--topo) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;font:400 16px/1.55 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--agua-3);overflow-x:clip;font-variant-numeric:tabular-nums}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.2em}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:650;letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+::selection{background:#bfe1f4;color:var(--ink)}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+/* piscina ao fundo (mesma do site) */
+.piscina{position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(60% 45% at 85% 8%,rgba(58,160,240,.45),transparent 70%),
+  radial-gradient(50% 40% at 0% 35%,rgba(120,205,235,.45),transparent 70%),
+  linear-gradient(180deg,#a9d6f0 0%,#c9e6f6 30%,#e3f1f9 62%,#f2f8fc 100%);overflow:hidden}
+.piscina::before{content:"";position:absolute;inset:-10%;background:url(img/luz-agua.png) 0 0/1200px 800px repeat;opacity:.85;animation:agua 70s linear infinite}
+@keyframes agua{to{background-position:1200px 800px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.piscina::before{animation:none}*{transition:none!important}}
+
+.glass{background:linear-gradient(140deg,rgba(255,255,255,.62),rgba(255,255,255,.3));border-radius:var(--r);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),inset 0 1px 0 rgba(255,255,255,.95),var(--sombra);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(255,255,255,.9)}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:50px;padding:.75em 1.3em;border:0;border-radius:999px;font:inherit;font-weight:600;font-size:.98rem;text-decoration:none;cursor:pointer;transition:background .2s ease-out,transform .2s ease-out}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-azul{background:var(--azul);color:#fff;box-shadow:0 12px 28px -12px rgba(11,106,208,.85),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-azul:hover{background:var(--azul-esc)}
+.btn-vidro{background:rgba(255,255,255,.55);color:var(--ink);border:1px solid rgba(255,255,255,.85)}
+.btn-vidro:hover{background:rgba(255,255,255,.8)}
+
+/* ---------- topo fixo: marca + índice ---------- */
+.topo{position:sticky;top:0;z-index:40;padding:10px 0 0;background:linear-gradient(180deg,rgba(207,232,246,.92),rgba(207,232,246,.75));-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);box-shadow:0 1px 0 rgba(255,255,255,.7),0 10px 24px -22px rgba(12,35,56,.6)}
+.topo-linha{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.brand img{height:28px;width:auto}
+.brand b{font-weight:800;letter-spacing:.12em;font-size:.92rem}
+.brand span{font-size:.78rem;font-weight:600;color:var(--ink-3);letter-spacing:.02em;padding-left:9px;border-left:1px solid rgba(12,35,56,.2)}
+.voltar{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9);font-size:.86rem;font-weight:600;text-decoration:none}
+.voltar svg{width:16px;height:16px}
+.indice{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 16px 12px;margin:0 -16px;scroll-padding-inline:16px}
+.indice::-webkit-scrollbar{display:none}
+.indice a{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.9);font-size:.87rem;font-weight:600;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.indice a i{font-style:normal;font-size:.74rem;color:var(--azul);font-weight:700}
+.indice a.ativo{background:var(--azul);border-color:var(--azul);color:#fff}
+.indice a.ativo i{color:#cfe6fa}
+
+/* ---------- capa ---------- */
+.capa{padding:28px 0 8px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azul-esc)}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--azul)}
+.capa h1{font-size:clamp(2.2rem,8.5vw,3.6rem);margin-top:10px}
+.capa h1 span{color:var(--azul)}
+.capa p.lead{margin-top:12px;color:var(--ink-2);font-size:1.04rem;max-width:52ch}
+.numeros{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:20px;padding:0;list-style:none}
+.numeros li{padding:12px 10px;border-radius:18px;text-align:center}
+.numeros b{display:block;font-size:1.5rem;font-weight:700;color:var(--azul);line-height:1.1}
+.numeros span{font-size:.76rem;color:var(--ink-3);font-weight:600;line-height:1.25;display:block;margin-top:2px}
+
+.titulo-sec{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 14px}
+.titulo-sec h2{font-size:clamp(1.6rem,6vw,2.3rem)}
+.titulo-sec small{font-size:.82rem;color:var(--ink-3);font-weight:600;white-space:nowrap}
+
+/* ---------- item do catálogo ---------- */
+.lista{display:grid;gap:18px}
+.item{padding:8px;border-radius:30px;scroll-margin-top:calc(var(--topo) + 12px)}
+.midia{position:relative;border-radius:23px;overflow:hidden;background:linear-gradient(160deg,#bfe1f4,#8fc6e8)}
+.trilho{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.trilho::-webkit-scrollbar{display:none}
+.slide{position:relative;flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:4/5;margin:0;padding:0;border:0;background:none;cursor:zoom-in}
+.slide img,.slide video{width:100%;height:100%;object-fit:cover}
+.rot{position:absolute;left:12px;top:12px;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);pointer-events:none}
+.rot svg{width:11px;height:11px}
+.cont{position:absolute;right:12px;top:12px;padding:5px 10px;border-radius:999px;background:rgba(12,35,56,.55);color:#fff;font-size:.76rem;font-weight:700;pointer-events:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pontos{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.pontos i{width:6px;height:6px;border-radius:999px;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(12,35,56,.12);transition:width .25s,background .25s}
+.pontos i.on{width:18px;background:#fff}
+.seta{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ink);display:none;align-items:center;justify-content:center;cursor:pointer}
+.seta svg{width:18px;height:18px}
+.seta.ant{left:12px}.seta.prox{right:12px}
+@media (hover:hover) and (pointer:fine){.midia.varios .seta{display:flex}}
+.sem-foto{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;aspect-ratio:4/5;color:var(--azul);background:
+  radial-gradient(70% 60% at 30% 20%,rgba(255,255,255,.6),transparent 70%),
+  linear-gradient(160deg,#cfe8f6,#9fd0ee)}
+.sem-foto svg{width:88px;height:88px;padding:20px;border-radius:28px;background:rgba(255,255,255,.7);box-shadow:inset 0 1px 0 #fff,var(--sombra)}
+
+.corpo{padding:18px 12px 12px}
+.cab{display:flex;align-items:flex-start;gap:12px}
+.num{flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:13px;background:rgba(11,106,208,.1);color:var(--azul);font-weight:700;font-size:.92rem}
+.cab h2{font-size:1.45rem;padding-top:6px}
+.corpo>p{margin-top:10px;color:var(--ink-2)}
+.rotulo{display:block;margin-top:16px;font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:.82rem;font-weight:600;color:var(--azul-esc);background:rgba(11,106,208,.1);border-radius:999px;padding:5px 12px}
+.inclui{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:2px}
+.inclui li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:9px 12px;border-radius:14px;background:rgba(255,255,255,.5);font-size:.94rem;color:var(--ink-2);line-height:1.4}
+.inclui li:first-child{border-radius:16px 16px 6px 6px}.inclui li:last-child{border-radius:6px 6px 16px 16px}.inclui li:only-child{border-radius:16px}
+.inclui svg{width:20px;height:20px;color:var(--azul);margin-top:1px}
+.acoes{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:16px}
+.acoes .btn-vidro{padding-inline:16px}
+.acoes .btn-vidro svg{width:18px;height:18px}
+
+@media (min-width:900px){
+  .lista{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .capa{padding-top:44px}
+}
+
+/* ---------- sistemas ---------- */
+.sistemas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sis{padding:7px;border-radius:24px;display:flex;flex-direction:column}
+.sis img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;background:var(--agua-1)}
+.sis div{padding:10px 6px 6px}
+.sis .cod{font-size:.72rem;font-weight:700;color:var(--azul);letter-spacing:.04em}
+.sis h3{font-size:1.02rem;margin-top:2px}
+.sis p{font-size:.84rem;color:var(--ink-2);margin-top:4px;line-height:1.4}
+@media (min-width:900px){.sistemas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ---------- método ---------- */
+.passos{list-style:none;margin:0;padding:18px 16px;counter-reset:p}
+.passos li{position:relative;display:grid;grid-template-columns:38px 1fr;column-gap:14px;padding-bottom:18px}
+.passos li:last-child{padding-bottom:0}
+.passos li:not(:last-child)::after{content:"";position:absolute;left:18px;top:38px;bottom:0;width:2px;background:linear-gradient(180deg,var(--azul-claro),var(--azul))}
+.passos li::before{counter-increment:p;content:counter(p);grid-row:1/3;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--azul);font-weight:700;box-shadow:0 0 0 4px rgba(255,255,255,.55),0 6px 14px -6px rgba(12,35,56,.35)}
+.passos li.teste::before{background:var(--azul);color:#fff}
+.passos h3{font-size:1.02rem;padding-top:8px}
+.passos p{font-size:.9rem;color:var(--ink-2);margin-top:2px}
+@media (min-width:900px){.passos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px;padding:28px}.passos li{padding-bottom:0}.passos li::after{display:none}}
+
+/* ---------- fecho ---------- */
+.fecho{margin-top:48px;position:relative;color:#fff;background:linear-gradient(180deg,var(--fundo-2),var(--fundo));overflow:hidden;isolation:isolate;padding:48px 0 calc(110px + env(safe-area-inset-bottom))}
+.fecho::before{content:"";position:absolute;inset:-10%;z-index:-1;background:url(img/luz-agua.png) 0 0/1200px 800px repeat;opacity:.16;animation:agua 80s linear infinite}
+.fecho h2{font-size:clamp(1.8rem,7vw,2.6rem);max-width:18ch}
+.fecho p{color:#cfe0f0;margin-top:12px;max-width:46ch}
+.cidades{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0;padding:0;list-style:none}
+.cidades li{padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:.86rem}
+.fecho .btn{margin-top:22px;width:100%;max-width:420px;background:#fff;color:var(--azul-esc)}
+.fecho .btn:hover{background:#e8f2fc}
+.rodape{margin-top:28px;font-size:.84rem;color:#a9c3da;line-height:1.8}
+
+/* ---------- barra de ação fixa ---------- */
+.barra{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;display:flex;gap:8px;padding:7px;border-radius:999px;max-width:520px;margin-inline:auto;transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .25s}
+.barra.oculta{transform:translateY(140%);opacity:0}
+.barra .btn{flex:1;min-height:48px}
+.barra .zap{flex:none;width:48px;padding:0;background:#25d366;color:#fff;box-shadow:0 10px 22px -10px rgba(20,120,60,.8)}
+.barra .zap svg{width:26px;height:26px}
+
+/* ---------- tela cheia ---------- */
+.lb{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#041a2e;color:#fff;overflow:hidden}
+.lb::backdrop{background:#041a2e}
+.lb .trilho{height:100%}
+.lb .slide{aspect-ratio:auto;height:100%;cursor:default;display:flex;align-items:center;justify-content:center}
+.lb .slide img,.lb .slide video{width:100%;height:100%;object-fit:contain}
+.lb-topo{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(12px + env(safe-area-inset-top)) 14px 12px;background:linear-gradient(180deg,rgba(4,26,46,.75),transparent);z-index:2}
+.lb-topo b{font-size:.95rem;font-weight:600}
+.lb-topo span{font-size:.82rem;color:#a9c3da;margin-left:8px}
+.lb-fechar{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.lb-fechar svg{width:20px;height:20px}
+.lb .seta{display:none;background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.35);color:#fff;z-index:2}
+@media (hover:hover) and (pointer:fine){.lb.varios .seta{display:flex}}
+</style>
+</head>
+<body>
+<div class="piscina" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.9 7l-4.1 1.2 1.2-3.9A8 8 0 1 1 20 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c.3 1.6 1.9 3.6 4 4.6l1.3-1.1 1.9.8c-.2 1-1.1 1.7-2.1 1.6C11.3 15 8.3 12 8 9.2c-.1-1 .6-1.9 1.6-2.1l.8 1.9z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 12.4l3 3 6-6.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 12 12"><path d="M2.5 1.5v9l8-4.5z" fill="currentColor"/></symbol>
+  <symbol id="i-exp" viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-esq" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-dir" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="s-laje" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v3H3z"/><path d="M5 12v8M19 12v8M9 5l3-2 3 2"/><path d="M3 9c3-1 6 0 9-1s6 0 9-1"/></g></symbol>
+  <symbol id="s-jardim" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16l-2 8H6z"/><path d="M12 13V7M12 9c-3 0-4-2-4-4 3 0 4 2 4 4zM12 8c0-3 2-4 4-4 0 3-2 4-4 4z"/></g></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <div class="topo-linha">
+      <a class="brand" href="index.html" aria-label="ImperTech — voltar ao site"><img src="img/logo-drop.png" alt="" width="21" height="28"><b>IMPERTECH</b><span>Catálogo</span></a>
+      <a class="voltar" href="index.html"><svg aria-hidden="true"><use href="#i-esq"/></svg>Site</a>
+    </div>
+    <nav class="indice" aria-label="Serviços do catálogo">
+      <a href="#lajes"><i>01</i>Lajes</a>
+      <a href="#terracos"><i>02</i>Terraços</a>
+      <a href="#piscinas"><i>03</i>Piscinas</a>
+      <a href="#baldrames"><i>04</i>Baldrames</a>
+      <a href="#reservatorios"><i>05</i>Reservatórios</a>
+      <a href="#jardineiras"><i>06</i>Jardineiras</a>
+      <a href="#areas-frias"><i>07</i>Áreas frias</a>
+      <a href="#subsolos"><i>08</i>Subsolos</a>
+      <a href="#sistemas"><i>+</i>Sistemas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="capa wrap" aria-labelledby="h-capa">
+  <span class="eyebrow">Catálogo de serviços</span>
+  <h1 id="h-capa">Do subsolo <span>à cobertura.</span></h1>
+  <p class="lead">Cada área recebe o sistema indicado para o tipo de água que enfrenta. Deslize as fotos e vídeos de cada serviço e toque para ver em tela cheia.</p>
+  <ul class="numeros">
+    <li class="glass"><b>8</b><span>serviços</span></li>
+    <li class="glass"><b>4</b><span>sistemas</span></li>
+    <li class="glass"><b>72 h</b><span>de teste em toda área</span></li>
+  </ul>
+</section>
+
+<section class="wrap" aria-label="Serviços">
+  <div class="titulo-sec"><h2>Serviços</h2><small>8 áreas</small></div>
+  <div class="lista">
+
+    <article class="item glass" id="lajes" data-servico="Lajes e coberturas">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/cobertura.webp" alt="Cobertura de prédio com manta asfáltica aplicada, cidade ao fundo" loading="lazy"></button>
+          <button class="slide" type="button"><img src="img/laje-casa.webp" alt="Laje residencial em condomínio coberta com manta asfáltica" loading="lazy"></button>
+          <button class="slide" type="button"><video data-src="img/video1.mp4" poster="img/capas/video1.jpg" muted loop playsinline preload="none" aria-label="Vídeo: laje com manta asfáltica"></video></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">01</span><h2>Lajes e coberturas</h2></div>
+        <p>Manta asfáltica com proteção mecânica, rodapés subindo nas platibandas e sobreposições seladas.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta asfáltica</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Base regularizada com caimento mínimo de 1% para os ralos</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Imprimação e manta a maçarico, com sobreposição mínima de 10 cm</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rodapés de no mínimo 30 cm subindo na platibanda</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Teste de estanqueidade de 72 h e proteção mecânica</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver fotos em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="terracos" data-servico="Terraços e sacadas">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/terraco-sm.webp" alt="Terraço com manta asfáltica aplicada antes do piso" loading="lazy"></button>
+          <button class="slide" type="button"><video data-src="img/video8.mp4" poster="img/capas/video8.jpg" muted loop playsinline preload="none" aria-label="Vídeo: terraço com manta asfáltica"></video></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">02</span><h2>Terraços e sacadas</h2></div>
+        <p>Impermeabilização sob o piso, com rodapés, ralos e soleiras resolvidos antes do revestimento.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta asfáltica</span><span class="tag">Manta líquida</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Laje regularizada com caimento para os ralos</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rodapés nas paredes e arremate em ralos e soleiras</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Teste de 72 h antes da proteção mecânica e do piso</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver fotos em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="piscinas" data-servico="Piscinas">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button" data-rot="Antes"><img src="img/piscina-antes-sm.webp" alt="Piscina em cobertura com a estrutura impermeabilizada, antes do revestimento" loading="lazy"></button>
+          <button class="slide" type="button" data-rot="Depois"><img src="img/piscina-depois-sm.webp" alt="A mesma piscina pronta, revestida e cheia" loading="lazy"></button>
+          <button class="slide" type="button"><video data-src="img/video4.mp4" poster="img/capas/video4.jpg" muted loop playsinline preload="none" aria-label="Vídeo: piscina em cobertura com manta asfáltica"></video></button>
+          <button class="slide" type="button"><video data-src="img/video7.mp4" poster="img/capas/video7.jpg" muted loop playsinline preload="none" aria-label="Vídeo: piscina com manta asfáltica"></video></button>
+          <button class="slide" type="button"><video data-src="img/video9.mp4" poster="img/capas/video9.jpg" muted loop playsinline preload="none" aria-label="Vídeo: piscina na cobertura de um prédio"></video></button>
+          <button class="slide" type="button" data-rot="Teste 72 h"><video data-src="img/video10.mp4" poster="img/capas/video10.jpg" muted loop playsinline preload="none" aria-label="Vídeo: piscina sendo cheia para o teste de estanqueidade"></video></button>
+          <button class="slide" type="button" data-rot="Teste 72 h"><video data-src="img/video3.mp4" poster="img/capas/video3.jpg" muted loop playsinline preload="none" aria-label="Vídeo: piscina cheia durante o teste de estanqueidade"></video></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">03</span><h2>Piscinas</h2></div>
+        <p>Estrutura impermeabilizada antes do revestimento, inclusive piscinas em cobertura de prédio.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta asfáltica</span><span class="tag">Argamassa polimérica</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fundo, paredes e cantos com reforço</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reforço nas passagens de tubulação e dispositivos</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Piscina cheia por 72 h no teste de estanqueidade</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Entregue pronta para receber o revestimento</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver fotos em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="baldrames" data-servico="Baldrames e muros de arrimo">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/baldrame-sm.webp" alt="Baldrame e parede enterrada revestidos com manta asfáltica" loading="lazy"></button>
+          <button class="slide" type="button"><img src="img/sis-manta.webp" alt="Manta asfáltica em parede de baldrame, com as emendas sobrepostas" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">04</span><h2>Baldrames e muros de arrimo</h2></div>
+        <p>Barreira contra a umidade do solo que sobe pelas paredes da casa.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta asfáltica</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Manta na face externa, do baldrame até acima do nível do terreno</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Aplicação antes do reaterro</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Emendas sobrepostas e seladas</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver fotos em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="reservatorios" data-servico="Reservatórios e caixas d'água">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/reservatorio-sm.webp" alt="Reservatório na cobertura com fundo e paredes impermeabilizados" loading="lazy"></button>
+          <button class="slide" type="button" data-rot="Na chuva"><img src="img/reservatorio-chuva-sm.webp" alt="A mesma área impermeabilizada debaixo de chuva" loading="lazy"></button>
+          <button class="slide" type="button"><video data-src="img/video2.mp4" poster="img/capas/video2.jpg" muted loop playsinline preload="none" aria-label="Vídeo: reservatório com manta asfáltica"></video></button>
+          <button class="slide" type="button"><video data-src="img/video5.mp4" poster="img/capas/video5.jpg" muted loop playsinline preload="none" aria-label="Vídeo: reservatório com argamassa polimérica"></video></button>
+          <button class="slide" type="button"><video data-src="img/video6.mp4" poster="img/capas/video6.jpg" muted loop playsinline preload="none" aria-label="Vídeo: reservatório na cobertura com argamassa polimérica"></video></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">05</span><h2>Reservatórios e caixas d'água</h2></div>
+        <p>Sistemas compatíveis com água potável, para reservatórios enterrados e na cobertura.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Argamassa polimérica</span><span class="tag">Manta asfáltica</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fundo e paredes revestidos em sequência, em demãos cruzadas</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Reforço nos cantos e nas passagens de tubulação</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Teste de estanqueidade antes de liberar</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver fotos em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="jardineiras" data-servico="Jardineiras e floreiras">
+      <div class="midia"><div class="sem-foto"><svg aria-hidden="true"><use href="#s-jardim"/></svg></div></div>
+      <div class="corpo">
+        <div class="cab"><span class="num">06</span><h2>Jardineiras e floreiras</h2></div>
+        <p>Impermeabilização com proteção contra raízes, para a água da rega não chegar à laje e às paredes.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta asfáltica</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Manta com proteção contra raízes</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Rodapés nas paredes e arremate nos drenos</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Teste de 72 h antes de receber a terra</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar style="grid-column:1/-1"><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="areas-frias" data-servico="Áreas frias">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/liquida.png" alt="Manta líquida sendo aplicada com rolo" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">07</span><h2>Áreas frias</h2></div>
+        <p>Banheiros, box, cozinhas e lavanderias, sem emendas e sem quebrar nada depois.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Manta líquida</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Película contínua, moldada no local, sem emendas</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Tela de reforço em ralos, cantos e tubulações</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Subida nas paredes do box e nos rodapés</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver foto em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+    <article class="item glass" id="subsolos" data-servico="Subsolos e garagens">
+      <div class="midia">
+        <div class="trilho">
+          <button class="slide" type="button"><img src="img/cristalizante.png" alt="Subsolo de concreto" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="corpo">
+        <div class="cab"><span class="num">08</span><h2>Subsolos e garagens</h2></div>
+        <p>Lajes, poços de elevador e contenções que convivem com a água do lençol.</p>
+        <span class="rotulo">Sistema indicado</span>
+        <div class="tags"><span class="tag">Cristalizante</span></div>
+        <span class="rotulo">O que inclui</span>
+        <ul class="inclui">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Produto que penetra nos poros do concreto</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Resistência à pressão negativa da água</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Poços de elevador, cortinas e lajes de subsolo</li>
+        </ul>
+        <div class="acoes"><a class="btn btn-azul" href="#" data-orcar><svg aria-hidden="true"><use href="#i-chat"/></svg>Orçar este serviço</a><button class="btn btn-vidro" type="button" data-abrir aria-label="Ver foto em tela cheia"><svg aria-hidden="true"><use href="#i-exp"/></svg></button></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="wrap" id="sistemas" aria-labelledby="h-sis" style="scroll-margin-top:calc(var(--topo) + 12px)">
+  <div class="titulo-sec"><h2 id="h-sis">Sistemas que usamos</h2><small>4 sistemas</small></div>
+  <div class="sistemas">
+    <article class="sis glass"><img src="img/sis-manta.webp" alt="Manta asfáltica aplicada em parede" loading="lazy"><div><span class="cod">SIS-01</span><h3>Manta asfáltica</h3><p>3 e 4 mm, a maçarico sobre base imprimada.</p></div></article>
+    <article class="sis glass"><img src="img/liquida.png" alt="Manta líquida aplicada com rolo" loading="lazy"><div><span class="cod">SIS-02</span><h3>Manta líquida</h3><p>Película contínua, sem emendas.</p></div></article>
+    <article class="sis glass"><img src="img/polimetrica.png" alt="Argamassa polimérica em parede de concreto" loading="lazy"><div><span class="cod">SIS-03</span><h3>Argamassa polimérica</h3><p>Cimentícia flexível, em demãos cruzadas.</p></div></article>
+    <article class="sis glass"><img src="img/cristalizante.png" alt="Subsolo de concreto" loading="lazy"><div><span class="cod">SIS-04</span><h3>Cristalizante</h3><p>Age nos poros do concreto, contra pressão negativa.</p></div></article>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="h-met">
+  <div class="titulo-sec"><h2 id="h-met">Como trabalhamos</h2><small>6 etapas</small></div>
+  <ol class="passos glass">
+    <li><h3>Visita técnica</h3><p>Levantamento no local: áreas, medidas, cronograma e condições da base.</p></li>
+    <li><h3>Especificação</h3><p>Sistema definido por área conforme a NBR 9575, com orçamento detalhado.</p></li>
+    <li><h3>Preparo da base</h3><p>Limpeza, regularização com caimento mínimo de 1% e cantos arredondados.</p></li>
+    <li><h3>Aplicação</h3><p>Conforme a NBR 9574: imprimação, sobreposições e rodapés de no mínimo 30 cm.</p></li>
+    <li class="teste"><h3>Teste de estanqueidade</h3><p>Lâmina d'água mantida por 72 horas antes de liberar a área.</p></li>
+    <li><h3>Proteção e entrega</h3><p>Proteção mecânica, relatório fotográfico e garantia por escrito.</p></li>
+  </ol>
+</section>
+</main>
+
+<section class="fecho" id="contato" aria-labelledby="h-fecho">
+  <div class="wrap">
+    <h2 id="h-fecho">Qual área da sua obra vamos impermeabilizar?</h2>
+    <p>Mande uma mensagem com o tipo de área e a cidade. A gente agenda a visita técnica, sem compromisso.</p>
+    <ul class="cidades"><li>Itajaí</li><li>Balneário Camboriú</li><li>Itapema</li><li>Balneário Piçarras</li><li>Navegantes</li><li>Penha</li></ul>
+    <a class="btn" href="#" data-zap><svg aria-hidden="true"><use href="#i-chat"/></svg>Chamar no WhatsApp</a>
+    <p class="rodape">ImperTech · Impermeabilização técnica · Itajaí — SC<br>WhatsApp (47) 99247-9009 · <a href="index.html">Ver o site completo</a></p>
+  </div>
+</section>
+
+<div class="barra glass" id="barra">
+  <a class="btn btn-azul" href="#" data-zap><svg aria-hidden="true"><use href="#i-chat"/></svg>Pedir visita técnica</a>
+  <a class="btn zap" href="#" data-zap aria-label="Conversar no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.11.56 4.17 1.62 5.99L4 29l8.25-2.15a12.1 12.1 0 0 0 3.79.6C22.68 27.45 28 22.1 28 15.5 28 8.88 22.68 3 16.04 3zm0 21.98c-1.17 0-2.32-.2-3.4-.6l-.4-.15-4.9 1.28 1.3-4.75-.26-.42a9.6 9.6 0 0 1-1.5-5.17c0-5.3 4.33-9.6 9.66-9.6 5.32 0 9.66 4.3 9.66 9.6 0 5.29-4.34 9.81-9.66 9.81zm5.3-7.2c-.29-.15-1.71-.84-1.98-.94-.26-.1-.46-.15-.65.15-.19.29-.75.94-.92 1.13-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.33-1.43-.86-.76-1.44-1.7-1.61-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.15-.17.2-.29.29-.48.1-.2.05-.37-.02-.51-.08-.15-.65-1.56-.9-2.14-.23-.56-.47-.48-.65-.49h-.55c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.42 0 1.43 1.04 2.8 1.19 3 .15.2 2.05 3.12 4.97 4.37.69.3 1.24.48 1.66.61.7.22 1.33.19 1.83.12.56-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.2-.55-.34z"/></svg></a>
+</div>
+
+<dialog class="lb" id="lb" aria-label="Fotos e vídeos em tela cheia">
+  <div class="lb-topo"><div><b id="lb-titulo"></b><span id="lb-cont"></span></div><button class="lb-fechar" type="button" aria-label="Fechar"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <div class="trilho" id="lb-trilho"></div>
+  <button class="seta ant" type="button" aria-label="Anterior"><svg aria-hidden="true"><use href="#i-esq"/></svg></button>
+  <button class="seta prox" type="button" aria-label="Próxima"><svg aria-hidden="true"><use href="#i-dir"/></svg></button>
+</dialog>
+
+<script>
+{
+/* ======= CONFIGURE AQUI ======= */
+const WHATSAPP = '5547992479009'; // DDI + DDD + número, só dígitos
+/* ============================== */
+const wa = (t) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+const abrirFora = (a, t) => { a.href = wa(t); a.target = '_blank'; a.rel = 'noopener'; };
+document.querySelectorAll('[data-zap]').forEach(a => abrirFora(a, 'Olá, ImperTech! Vi o catálogo de serviços e quero agendar uma visita técnica.'));
+document.querySelectorAll('[data-orcar]').forEach(a => {
+  const s = a.closest('.item').dataset.servico;
+  abrirFora(a, `Olá, ImperTech! Vi o catálogo e quero um orçamento de: ${s}.\nCidade da obra: \nÁrea aproximada (m²): `);
+});
+
+const ico = id => `<svg aria-hidden="true"><use href="#${id}"/></svg>`;
+const ehVideo = el => el.tagName === 'VIDEO';
+const carregar = v => { if (!v.src && v.dataset.src) v.src = v.dataset.src; };
+
+/* ---------- carrosséis ---------- */
+const indiceAtual = t => Math.round(t.scrollLeft / t.clientWidth);
+const irPara = (t, i) => t.scrollTo({ left: i * t.clientWidth, behavior: 'smooth' });
+
+document.querySelectorAll('.item .midia').forEach(midia => {
+  const trilho = midia.querySelector('.trilho');
+  if (!trilho) return;
+  const slides = [...trilho.children];
+  slides.forEach(s => {
+    const m = s.firstElementChild;
+    const r = s.dataset.rot || (ehVideo(m) ? 'Vídeo' : '');
+    if (r) s.insertAdjacentHTML('beforeend', `<span class="rot">${ehVideo(m) ? ico('i-play') : ''}${r}</span>`);
+  });
+  if (slides.length < 2) return;
+  midia.classList.add('varios');
+  midia.insertAdjacentHTML('beforeend',
+    `<span class="cont">1/${slides.length}</span><div class="pontos">${slides.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` +
+    `<button class="seta ant" type="button" aria-label="Anterior">${ico('i-esq')}</button><button class="seta prox" type="button" aria-label="Próxima">${ico('i-dir')}</button>`);
+  const cont = midia.querySelector('.cont'), pontos = [...midia.querySelectorAll('.pontos i')];
+  let ult = 0;
+  trilho.addEventListener('scroll', () => {
+    const i = indiceAtual(trilho);
+    if (i === ult) return; ult = i;
+    cont.textContent = `${i + 1}/${slides.length}`;
+    pontos.forEach((p, k) => p.classList.toggle('on', k === i));
+  }, { passive: true });
+  midia.querySelector('.seta.ant').addEventListener('click', () => irPara(trilho, Math.max(0, indiceAtual(trilho) - 1)));
+  midia.querySelector('.seta.prox').addEventListener('click', () => irPara(trilho, Math.min(slides.length - 1, indiceAtual(trilho) + 1)));
+});
+
+/* vídeos: só carregam e tocam quando aparecem na tela */
+const vio = new IntersectionObserver(ents => ents.forEach(en => {
+  const v = en.target;
+  if (en.isIntersecting) { carregar(v); v.play().catch(() => {}); } else v.pause();
+}), { threshold: 0.6 });
+document.querySelectorAll('.item video').forEach(v => vio.observe(v));
+
+/* ---------- tela cheia ---------- */
+const lb = document.getElementById('lb'), lbTrilho = document.getElementById('lb-trilho');
+const lbTit = document.getElementById('lb-titulo'), lbCont = document.getElementById('lb-cont');
+let lbTotal = 0;
+const lbAtualiza = () => {
+  const i = indiceAtual(lbTrilho);
+  lbCont.textContent = lbTotal > 1 ? `${i + 1} de ${lbTotal}` : '';
+  lbTrilho.querySelectorAll('video').forEach((v, k, all) => {
+    const slide = v.closest('.slide'), idx = [...lbTrilho.children].indexOf(slide);
+    if (idx === i) { carregar(v); v.play().catch(() => {}); } else v.pause();
+  });
+};
+lbTrilho.addEventListener('scroll', () => { clearTimeout(lbTrilho._t); lbTrilho._t = setTimeout(lbAtualiza, 80); }, { passive: true });
+
+const abrirLb = (item, inicio) => {
+  const slides = [...item.querySelectorAll('.midia .slide')];
+  if (!slides.length) return;
+  lbTotal = slides.length;
+  lbTit.textContent = item.dataset.servico;
+  lbTrilho.innerHTML = '';
+  slides.forEach(s => {
+    const m = s.firstElementChild, d = document.createElement('div');
+    d.className = 'slide';
+    if (ehVideo(m)) {
+      const v = document.createElement('video');
+      v.dataset.src = m.dataset.src; v.poster = m.poster; v.loop = true; v.playsInline = true; v.controls = true; v.preload = 'none';
+      v.setAttribute('aria-label', m.getAttribute('aria-label'));
+      d.append(v);
+    } else {
+      const im = document.createElement('img'); im.src = m.src; im.alt = m.alt; d.append(im);
+    }
+    lbTrilho.append(d);
+  });
+  lb.classList.toggle('varios', lbTotal > 1);
+  item.querySelectorAll('.midia video').forEach(v => v.pause());
+  lb.showModal();
+  document.body.style.overflow = 'hidden';
+  lbTrilho.scrollLeft = inicio * lbTrilho.clientWidth;
+  lbAtualiza();
+};
+const fecharLb = () => lb.close();
+lb.addEventListener('close', () => {
+  lbTrilho.querySelectorAll('video').forEach(v => v.pause());
+  lbTrilho.innerHTML = '';
+  document.body.style.overflow = '';
+});
+lb.querySelector('.lb-fechar').addEventListener('click', fecharLb);
+lb.querySelector('.seta.ant').addEventListener('click', () => irPara(lbTrilho, Math.max(0, indiceAtual(lbTrilho) - 1)));
+lb.querySelector('.seta.prox').addEventListener('click', () => irPara(lbTrilho, Math.min(lbTotal - 1, indiceAtual(lbTrilho) + 1)));
+document.addEventListener('keydown', e => {
+  if (!lb.open) return;
+  if (e.key === 'ArrowRight') irPara(lbTrilho, Math.min(lbTotal - 1, indiceAtual(lbTrilho) + 1));
+  if (e.key === 'ArrowLeft') irPara(lbTrilho, Math.max(0, indiceAtual(lbTrilho) - 1));
+});
+
+document.querySelectorAll('.item').forEach(item => {
+  const slides = [...item.querySelectorAll('.midia .slide')];
+  slides.forEach((s, i) => s.addEventListener('click', () => abrirLb(item, i)));
+  const b = item.querySelector('[data-abrir]');
+  if (b) b.addEventListener('click', () => abrirLb(item, indiceAtual(item.querySelector('.trilho'))));
+});
+
+/* ---------- índice: marca o serviço que está na tela ---------- */
+const indice = document.querySelector('.indice');
+const links = new Map([...indice.querySelectorAll('a')].map(a => [a.getAttribute('href').slice(1), a]));
+const marcar = id => {
+  const a = links.get(id); if (!a || a.classList.contains('ativo')) return;
+  links.forEach(l => l.classList.remove('ativo'));
+  a.classList.add('ativo');
+  indice.scrollTo({ left: a.offsetLeft - indice.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth' });
+};
+const sio = new IntersectionObserver(ents => ents.forEach(en => { if (en.isIntersecting) marcar(en.target.id); }), { rootMargin: '-35% 0px -60% 0px' });
+document.querySelectorAll('.item, #sistemas').forEach(s => sio.observe(s));
+
+/* altura real do topo (para a rolagem até o serviço parar no lugar certo) */
+const topo = document.querySelector('.topo');
+const medir = () => document.documentElement.style.setProperty('--topo', topo.offsetHeight + 'px');
+medir(); addEventListener('resize', medir);
+
+/* barra de ação some no fecho, que já tem o botão */
+const barra = document.getElementById('barra');
+new IntersectionObserver(([en]) => barra.classList.toggle('oculta', en.isIntersecting), { threshold: 0.15 }).observe(document.getElementById('contato'));
+}
+</script>
+</body>
+</html>
